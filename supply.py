@@ -38,23 +38,21 @@ def supply_process():
 
 @supply_app.route("/supply/count_plus",methods=['post'])
 def supply_plus():
-	count= int(request.form.get('count','0'))
+	
 	sno = int(request.form.get('sno','0'))
 	for supply_dict in supply_list:
 		if supply_dict['sno']==sno:
-			supply_dict['count']= count+1
-			break
-	return redirect(f"/supply/read?son={sno}")
+			supply_dict['count']+=1
+	return redirect(f"/supply/read?sno={sno}")
 
 @supply_app.route("/supply/count_minus",methods=['post'])
 def count_minus():
-	count= int(request.form.get('count','0'))
+	
 	sno = int(request.form.get('sno','0'))
 	for supply_dict in supply_list:
 		if supply_dict['sno']==sno:
-			supply_dict['count']=count-1
-			break
-	return redirect(f"/supply/read?son={sno}")
+			supply_dict['count']-=1
+	return redirect(f"/supply/read?sno={sno}")
 
 @supply_app.route('/supply/delete',methods=['post'])
 def delete():
