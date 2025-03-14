@@ -99,3 +99,7 @@ section {
 footer {
 	border: 1px solid palevioletred;
 }
+
+.bottom {
+	margin-top: 500px;
+}
