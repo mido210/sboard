@@ -25,7 +25,23 @@
         <main>
             <aside>부가정보</aside>
             <section>
-                <h1>Welcome</h1>
+                <form action="/todo/write" method="post">
+                    <div class="mt-3 mb-3">
+                        <label for="date" class="form-label">마감일:</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                    <div class="mt-3 mb-3">
+                        <label for="title" class="form-label">할일:</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="할일 입력:" required>
+                    </div>
+                    <div class="mt-3 mb-3">
+                        <label for="content">설명:</label>
+                        <textarea class="form-control" rows="5" id="content" name="content"></textarea>
+                    </div>
+                    <div class="mt-3 mb-3">
+                        <button class="btn btn-success">작성</button>
+                    </div>
+                </form>
             </section>
             <aside>부가정보</aside>
         </main>
